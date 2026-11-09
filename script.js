@@ -1,0 +1,1 @@
+const links=[...document.querySelectorAll('.nav nav a')];links.forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav').classList.remove('open')));
