@@ -17,12 +17,15 @@
     </a>
     <nav>
       <a href="#home">Home</a>
+      <a href="#estimate">Cost Estimate</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <a class="nav-mobile-cta" href="#contact">Get a Quote</a>
     </nav>
     <a class="nav-btn" href="#contact">Get a Quote</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <main>
@@ -33,11 +36,86 @@
         <h1>We Build <span>Visions.</span><br>We Finish <span>Excellence.</span></h1>
         <p class="lead">Construction, finishing and interior solutions delivered with precision, quality and attention to every detail.</p>
         <div class="actions">
-          <a class="btn primary" href="#projects">Explore Projects</a>
-          <a class="btn ghost" href="#contact">Contact Us</a>
+          <a class="btn primary" href="#estimate">Calculate Your Finishing Cost</a>
+          <a class="btn ghost" href="#projects">Explore Projects</a>
         </div>
       </div>
       <div class="scroll">SCROLL TO EXPLORE ↓</div>
+    </section>
+
+    <section id="estimate" class="section estimate">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">COST ESTIMATE</p>
+          <h2>How much will your<br>finishing <span>cost?</span></h2>
+        </div>
+        <p>Enter your apartment size, choose a finishing level, and get an instant estimate.</p>
+      </div>
+
+      <form id="estimator" class="estimator" novalidate>
+        <div class="est-step">
+          <label class="est-label" for="area"><b>Step 1</b> Apartment area</label>
+          <div class="area-field">
+            <input id="area" name="area" type="number" inputmode="decimal" min="1" step="any" placeholder="e.g. 150" autocomplete="off">
+            <span>m²</span>
+          </div>
+        </div>
+
+        <fieldset class="est-step tiers">
+          <legend class="est-label"><b>Step 2</b> Finishing level</legend>
+          <div class="tier-grid">
+            <label class="tier">
+              <input type="radio" name="tier" value="economic">
+              <span class="tier-body">
+                <span class="tier-gallery" role="group" aria-label="Economic finishing examples">
+                  <span style="background-image:url('economic-bathroom.jpg')" role="img" aria-label="Economic bathroom"></span>
+                  <span style="background-image:url('economic-hallway.jpg');background-position:center 45%" role="img" aria-label="Economic hallway"></span>
+                  <span style="background-image:url('economic-room.jpg');background-position:center 35%" role="img" aria-label="Economic room"></span>
+                </span>
+                <span class="tier-info">
+                  <b>01</b>
+                  <h3>Economic</h3>
+                  <p>Smart, durable finishing with standard materials and a clean result.</p>
+                </span>
+              </span>
+            </label>
+            <label class="tier">
+              <input type="radio" name="tier" value="standard">
+              <span class="tier-body">
+                <span class="tier-gallery" role="group" aria-label="Standard finishing examples">
+                  <span style="background-image:url('standard-bathroom.jpg')" role="img" aria-label="Standard bathroom"></span>
+                  <span style="background-image:url('standard-living.jpg');background-position:center 40%" role="img" aria-label="Standard living room"></span>
+                  <span style="background-image:url('standard-room.jpg');background-position:center 45%" role="img" aria-label="Standard room"></span>
+                </span>
+                <span class="tier-info">
+                  <b>02</b>
+                  <h3>Standard</h3>
+                  <p>Higher-grade materials and more refined details for everyday comfort.</p>
+                </span>
+              </span>
+            </label>
+            <label class="tier">
+              <input type="radio" name="tier" value="luxury">
+              <span class="tier-body">
+                <span class="tier-gallery" role="group" aria-label="Modern Luxury finishing examples">
+                  <span style="background-image:url('luxury-bathroom.jpg')" role="img" aria-label="Luxury bathroom"></span>
+                  <span style="background-image:url('luxury-bedroom.jpg')" role="img" aria-label="Luxury bedroom"></span>
+                  <span style="background-image:url('luxury-kitchen.jpg')" role="img" aria-label="Luxury kitchen"></span>
+                </span>
+                <span class="tier-info">
+                  <b>03</b>
+                  <h3>Modern Luxury</h3>
+                  <p>Premium materials, custom design details and a high-end modern look.</p>
+                </span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div id="est-result" class="est-result" aria-live="polite">
+          <p class="est-hint">Enter the area and pick a level to see the price.</p>
+        </div>
+      </form>
     </section>
 
     <section id="about" class="section about">
@@ -78,7 +156,6 @@
           <p class="eyebrow">OUR WORK</p>
           <h2>Featured <span>Projects</span></h2>
         </div>
-        <p>Replace these placeholders with your real project photos.</p>
       </div>
       <div class="project-grid">
         <article class="project p1" style="background-image:url('project-01.jpeg')"><div><small>PROJECT 01</small><h3>Luxury Bathroom</h3></div></article>
