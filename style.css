@@ -206,3 +206,45 @@ footer p{margin:0}
   html{scroll-behavior:auto}
   *{transition:none!important}
 }
+
+
+/* =========================================================
+   Room-by-room estimator
+   ========================================================= */
+.builder{display:grid;gap:26px;max-width:1100px}
+.room-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.room{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);transition:.25s;min-width:0}
+.room.active{border-color:var(--gold);box-shadow:0 12px 28px rgba(60,45,15,.09)}
+.room-photo{height:190px;background-color:#e6e0d2;background-size:cover;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--line);transition:background-image .3s}
+.room-body{padding:20px 22px 22px;display:grid;gap:16px}
+.room-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.room-top h3{margin:0;font-size:20px;color:var(--text)}
+.stepper{display:flex;align-items:center;border:1px solid #cfc7b5;background:var(--bg)}
+.stepper button{width:44px;height:44px;border:0;background:transparent;color:var(--gold);font:700 22px Montserrat,Arial,sans-serif;cursor:pointer;transition:.2s}
+.stepper button:hover:not(:disabled){background:var(--gold-soft)}
+.stepper button:disabled{color:#c4beb0;cursor:not-allowed}
+.stepper output{min-width:40px;text-align:center;font-weight:800;font-size:18px;color:var(--text)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 6px;min-height:56px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;transition:.2s}
+.seg button span{font-size:12px;font-weight:700}
+.seg button small{font-size:10px;color:var(--muted);font-weight:500}
+.seg button:hover{border-color:var(--gold-btn)}
+.seg button.on{background:var(--gold-btn);border-color:var(--gold-btn);color:var(--ink)}
+.seg button.on small{color:#3b2f12}
+.room-sub{margin:0;font-size:13px;color:var(--muted)}
+.room.active .room-sub{color:var(--text);font-weight:600}
+.est-lines{list-style:none;margin:0;padding:0;grid-column:1/-1;display:grid;gap:0}
+.est-lines li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.est-lines li em{font-style:normal;color:var(--muted);font-size:12px;margin-left:6px}
+.est-lines li b{white-space:nowrap}
+.est-out .est-total{grid-column:1/-1}
+@media(max-width:850px){
+  .room-grid{grid-template-columns:1fr}
+  .room-photo{height:auto;aspect-ratio:16/9}
+}
+@media(max-width:520px){
+  .room-body{padding:16px}
+  .room-top h3{font-size:18px}
+  .seg button span{font-size:11px}
+  .est-lines li{flex-direction:column;gap:4px}
+}
